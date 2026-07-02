@@ -41,7 +41,6 @@ jobs:
           elif [[ ${{matrix.vector.image}} == *"centos"* ]]; then
             dnf install which -y
           elif [[ ${{matrix.vector.image}} == *"mariner"* || ${{matrix.vector.image}} == *"azurelinux"* ]]; then
-            GNUPGHOME=/root/.gnupg tdnf update -y &&
             GNUPGHOME=/root/.gnupg tdnf install tar -y # needed for `actions/checkout`
           fi
 
