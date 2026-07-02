@@ -25,7 +25,7 @@ jobs:
             os: windows-11-arm
 
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@v4
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v5.4.0
@@ -65,7 +65,7 @@ jobs:
         cp out/windows/Installer.Windows/bin/Release/net472/${{ matrix.runtime }}.sym/* artifacts/bin/${{ matrix.runtime }}/
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.runtime }}
         path: |
@@ -82,7 +82,7 @@ jobs:
         runtime: [ linux-x64, linux-arm64, linux-arm ]
 
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@v4
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v5.4.0
@@ -109,7 +109,7 @@ jobs:
         mv out/linux/Packaging.Linux/Release/tar/*.tar.gz artifacts/
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.runtime }}
         path: |
@@ -126,7 +126,7 @@ jobs:
         runtime: [ osx-x64, osx-arm64 ]
 
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@v4
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v5.4.0
@@ -154,7 +154,7 @@ jobs:
         mv out/osx/Installer.Mac/pkg/Release/gcm*.pkg artifacts/
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v7
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.runtime }}
         path: |
